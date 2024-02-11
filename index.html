@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TFD9TXR');</script>
+  <title>Happy Valentines Day! - Bashar Kanan</title>
+  <link rel="stylesheet" href="index.css">
+
+  <meta name="viewport" content="width=1050, user-scalable=no" />
+  <script type="text/javascript" src="extras/jquery.min.1.7.js"></script>
+  <script type="text/javascript" src="extras/modernizr.2.5.3.min.js"></script>
+</head>
+
+
+<body>
+  <audio id="audio" autoplay loop>
+    <source src="images2/Strawberry Shortcake - Better With You.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <button onclick="toggleAudio()">Toggle Audio</button>
+
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFD9TXR" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <div class="flipbook-viewport">
+    <div class="container">
+      <div class="flipbook">
+        <div class="page" style="background-image:url(images2/IMG_5217.jpeg)"></div>
+        <div class="double" style="background-image:url(images2/image1.png)">
+        </div>
+        <div class="double" style="background-image:url(images2/image33.jpg)">
+        </div>
+        <div class="double" style="background-image:url(images2/iamge44..jpeg)">
+        </div>
+        <div class="double" style="background-image:url(images2/final.jpeg)">
+          <div id="showbuttons-container">
+            <button id="showbuttons">Click Me</button>
+          </div>
+        </div>
+        <div class="page" style="background-image:url(images2/IMG_5217.jpeg)"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="buttons">
+    <button id="no-button">No</button>
+    <button id="yes-button">Yes</button>
+  </div>
+
+  <script src="index.js"></script>
+  <script>
+
+    document.getElementById("showbuttons").addEventListener("click", showbuttons);
+    function showbuttons() {
+      document.getElementById("buttons").style.display = "block";
+    }
+
+    var audio = document.getElementById("audio");
+    audio.currentTime = 20;
+
+    function toggleAudio() {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+
+    const answers = [
+      "Damn did you even think about it?",
+      "Are you really sure??",
+      "I'm not sure if you're sure",
+      "I'm not sure if you're sure if you're sure",
+      "I'm not sure if you're sure if you're sure if you're sure",
+      "im giving you a last chance",
+      "ياسراء بلا هبل متتتتتتتتتتت",
+      "بسسسسسسسسس يزلمة",
+      "زعلتك اشي؟",
+      "مممممممم حاول مرة اخرى",
+      "عععععععععععععع",
+      "لا بتتخريني متتتتتت",
+      "Are you really realy sure???",
+      "بسسسسسسسسسسسسسسس",
+      "خلص؟",
+      "مشان اللههههههههههههههههه",
+      "اوق مستحيل تهرب يلا كمان فرصة"
+    ]
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const no_button = document.getElementById('no-button');
+      const yes_button = document.getElementById('yes-button');
+      let i = 0;
+      let size = 50;
+      let clicks = 0;
+
+      no_button.addEventListener('click', () => {
+        clicks++;
+        // increase button height and width gradually to 250px
+        const sizes = [40, 50, 30, 35, 45]
+        const random = Math.floor(Math.random() * sizes.length);
+        size += sizes[random]
+        yes_button.style.height = `${size}px`;
+        yes_button.style.width = `${size}px`;
+        let total = answers.length;
+        // change button text
+        if (i < total - 1) {
+          no_button.innerHTML = answers[i];
+          i++;
+        } else if (i === total - 1) {
+          alert(answers[i]);
+          i = 0;
+          no_button.innerHTML = "No";
+          yes_button.style.height = "50px";
+          yes_button.style.width = "50px";
+          size = 50;
+        }
+      });
+
+      yes_button.addEventListener('click', () => {
+
+        // Create a video element
+        let video = document.createElement('video');
+        video.src = 'images2/video.mp4'; // Set the source of your video
+        video.autoplay = true;
+        video.loop = true;
+        video.style.position = 'fixed';
+        video.style.top = '0';
+        video.style.left = '0';
+        video.style.width = '100%';
+        video.style.height = '100%';
+        video.style.zIndex = '9999';
+
+        // Append the video element to the body
+        document.body.appendChild(video);
+
+        // hide buttons div
+        let buttons = document.getElementById('buttons');
+        buttons.style.display = "none";
+      });
+    });
+  </script>
+</body>
+
+</html>
